@@ -1,2 +1,3 @@
-# Cancer-Tissue-Analyzer
-Ai powered web app to batch analyze Histopathologic image patches - [ In Development ]
+
+My previous web apps accept images one at a time. This app is able to accept multiple image patches.
+The Model is in development. Watch this space...
