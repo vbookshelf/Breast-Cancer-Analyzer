@@ -3,7 +3,9 @@
 
 Live Web App: 
 
-This is a prototype for a freely available online tool that can detect two forms of Breast Cancer on histopathology image patches. The app can process many images at the same time. 
+This is a prototype for a freely available online tool that can detect two forms of Breast Cancer on histopathology image patches. The existing histopathology process is time consuming and small malignant areas can be missed. This app can help speed up a pathologist's workflow and provide diagnosis support.
+
+
 
 <b>The app has two models. Each model can detect one of the following:</b>
 
