@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Breast Cancer Analyzer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Use the power of Machine Learning to automatically analyze histopathologic image patches.">
+
+
+<!--Code to prevent the browser from caching the page-->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+
+
+
+
+
+<!--CSS Stylesheets-->
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/histo.css">
+
+<!--Link to Font Awesome icons-->
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css' integrity='sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns' crossorigin='anonymous'>
+
+<!--Link to fonts from google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+
+
+<link rel="shortcut icon" type="image/png" href="robotfavicon.png">
+
+
+
+
+<style>
+html,body,h2,h3,h4 {font-family: Helvetica, sans-serif}
+</style>
+
+
+</head>
+
+
+<body class="w3-pale-blue">
+
+
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content. -->
+<div class="w3-content card" style="max-width:960px">
+
+
+
+<!-- 1. HOME PAGE TAB -->
+<div class="tabbed w3-animate-opacity w3-white" id="home">
+
+
+
+<!-- Header -->
+<div class="w3-center title adjust-fontcolor logo">
+	
+  <h1 class="space-letters w3-text-purple"><i class='fas fa-microscope w3-padding w3-text-teal' style='font-size:40px'></i><b>Breast Cancer Analyzer</b></h1>
+  <h5 class="space-letters w3-text-red">for Histopathology Image Patches</h5>
+  
+  <h5 class="space-letters tag-font w3-text-red"><b>powered by<br> Artificial Intelligence</b></h5>
+</div>
+
+
+
+
+<!-- Front page image -->
+<!-- This image will be replaced once the js code runs. -->
+<div class="w3-center">
+	<img id="selected-image" class="w3-round adjust-image" width="200" src="assets/normal.png" alt=""> 
+</div> 
+
+
+<p id="demo_name"></p>
+<p id="demo_list"></p>
+
+
+<div class="w3-center">
+	<div class="progress-bar">Ai is Loading...</div>
+</div>
+
+
+<div class="w3-center add-margin side-margin w3-round w3-pale-red w3-animate-opacity">
+		
+	<h5 class='breast-cancer new-font w3-text-purple'><i class='fas fa-circle w3-padding w3-text-red' style='font-size:10px'></i>IDC Analyzer</h5>
+		
+</div>
+
+<div class="w3-center add-margin side-margin w3-round w3-pale-blue w3-animate-opacity">
+		
+	<h5 class='metastatic-cancer  new-font w3-text-purple'><i class='fas fa-circle w3-padding w3-text-red' style='font-size:10px'></i>Metastatic Cancer Analyzer</h5>
+		
+</div>
+
+
+
+<div class="dont-break-out w3-center add-padding w3-border add-margin side-margin w3-round w3-pale-blue">
+		
+	<h5 class='new-font'>Results</h5>
+	<ol class='w3-left-align' id='prediction-list'></ol>
+		
+</div>
+
+
+<div class="add-padding w3-border add-margin side-margin w3-round w3-padding w3-text-teal">
+	
+	<p>What would you like to detect?</p>
+	
+	<input id='met_cancer_input' class="w3-margin-right w3-margin-bottom" type="radio" name="model_type" value="metastatic_cancer" checked>Metastatic Cancer<br>
+	
+	<input id='breast_cancer_input' class="w3-margin-right w3-margin-bottom" type="radio" name="model_type" value="breast_cancer">Invasive Ductal Carcinoma<br>
+	
+	
+	
+	 
+	
+</div>
+
+
+<!-- Button -->
+<div id="btnn" class="w3-center bottom-padding">
+	
+	<button class="w3-btn w3-purple w3-round w3-margin-bottom adjust-spacing w3-hover-red btn-font w3-padding w3-space-letters w3-card-4" onclick="setTimeout(simulateClick.bind(null, 'image-selector'), 200)"><i class='fas fa-camera w3-padding-right' style='font-size:15px'></i><b>Submit Images</b></button>
+	
+	<p class="w3-text-teal">jpeg or png</p>
+</div> 
+
+
+
+
+
+
+
+<div class='w3-padding'>
+	<p class='w3-round w3-margin w3-margin-bottom w3-text-teal'>Please Note: This is a prototype.</p>
+</div>
+
+
+</div><!--END OF HOME PAGE TAB-->
+
+
+
+<!-- We simulate clicks on these two. -->
+<div class="hide">
+	<button id='predict-button'>Predict</button>
+</div>
+
+<!-- This is here because it makes it easier to style the button above.-->
+<div class="hide">
+	<input id="image-selector" type="file" multiple>
+</div>
+<!--===================================-->
+
+
+	<!-- Load jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+	</script>
+	
+	<!-- Load TensorFlow.js -->
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> 
+	</script>
+	
+	
+	<!-- Load the Javascript code -->
+	<script src="jscript/met_cancer_classes.js"></script>
+	<script src="jscript/breast_cancer_classes.js"></script>
+	
+	<script src="jscript/app_startup_code.js"></script>
+	<script src="jscript/met_cancer_analyzer.js"></script>
+	<script src="jscript/breast_cancer_analyzer.js"></script>	
+	
+	
+	
+</div> <!-- w3-content -->
+
+</body>
+</html>
+
