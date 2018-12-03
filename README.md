@@ -3,14 +3,14 @@
 
 Live Web App: 
 
-This is a prototype for a freely available online tool that can detect two forms of Breast Cancer on histopathology image patches. The existing histopathology process is time consuming and small malignant areas can be missed. This app can help speed up a pathologist's workflow and provide diagnosis support.
+This is a prototype for a freely available online tool that can detect two forms of Breast Cancer in histopathology image patches. The existing histopathology process is time consuming and small malignant areas can be missed. This app can help speed up a pathologist's workflow and provide diagnosis support.
 
 
 
 <b>The app has two models. Each model can detect one of the following:</b>
 
 1. Metastatic Cancer - Cancer that has spread from the site of origin to other area/s of the body.
-2. Invasive Ductal Carcinoma - The most common sub-type of breast cancer.
+2. Invasive Ductal Carcinoma - The most common subtype of breast cancer.
 
 
 <b>These are the papers that discuss the datasets that I used to train the two models:</b>
