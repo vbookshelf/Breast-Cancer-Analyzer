@@ -5,7 +5,7 @@ Live Web App:
 
 This is a prototype for a freely available online tool that can detect two forms of Breast Cancer in histopathology image patches. The existing histopathology process is time consuming and small malignant areas can be missed. This app can help speed up a pathologist's workflow and provide diagnosis support.
 
-
+<hr>
 
 <b>The app has two models. Each model can detect one of the following:</b>
 
@@ -36,6 +36,8 @@ https://www.kaggle.com/paultimothymooney/breast-histopathology-images<br>
 
 
 The python code to build and train the models is included in the Jupyter notebook. All the javascript, css and html files are also freely available here. The trained models are also available.
+
+<hr>
 
 Bugs & Lessons Learned:
 1. Chrome does not support tiff images.
