@@ -53,7 +53,7 @@ In the app I used async/await to achieve this. Because my Javascript knowledge i
 2. I think there is one other potential source of prediction errors. In order to read an image Tensorflowjs needs the image to first be made part of an html image element. It then reads this image element and converts it into a tensor. When using multiple images, delays relating to putting an image into an html element (setting the src attribute) could also cause prediction errors. The programmer needs to keep this in mind especially if the image sizes are large.
 
 
-3. As mentioned above, most web browsers don't support the tiff image format. This needs to be kept in mind when pre-processing training data if the intention is to build a web app.
+3. Most web browsers don't support the tiff image format. This needs to be kept in mind when pre-processing training data if the intention is to build a web app.
 
 
 4. Because Tensorflowjs is a new technology, web apps bulit using it may not work in some browsers. The user will see a message saying the "Ai is loading..." but that message will never go away because the app is actually frozen. It's better to advise users to use the latest version of Chrome.
