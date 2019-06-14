@@ -1,6 +1,13 @@
 
+## Breast-Cancer-Analyzer
 
-Live Web App: http://histo.test.woza.work/<br>
+Live Web App: http://histo.test.woza.work/
+
+<br>
+
+<img src="http://histo.test.woza.work/assets/histo_sample.png" width="350"></img>
+
+<br>
 
 This is a prototype for a freely available online tool that can detect two forms of Breast Cancer in histopathology image patches. The current histopathology process is time consuming and small malignant areas can be missed. This app can help speed up a pathologist's workflow and provide diagnosis support.
 
